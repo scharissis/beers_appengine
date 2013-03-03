@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="beerz">
+<head>
+	<title>Beer</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	
+	<!-- Bootstrap -->
+	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+	<style>
+		body {
+			padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		}
+		@media only screen and (min-device-width : 320px) and (max-device-width : 569px) {
+		body { padding-top: 0px; }
+		}
+	</style>
+	
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+	
+</head>
+<body ng-controller="AppCtrl">	
+		
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!-- Collapsation button -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</a>
+
+				<!-- Brand -->				
+				<a class="brand active" style="font-family: 'Audiowide', cursive; font-size: 32px;" href="/">BEERS</a>
+			
+				<!-- Collapsible Items (hidden at 940px or less) -->
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="divider-vertical"></li>							
+						<li class="ng-class:isActive('/beers')">
+							<a href="/beers">Beer List</a>
+						</li>
+						<li class="ng-class:isActive('/beers/add')">
+							<a href="/beers/add">Add Beers</a>
+						</li>
+					</ul> <!-- ul nav -->						
+				</div> <!-- nav-collapse -->
+				
+				<p class="navbar-text pull-right" >Welcome, <strong>{{user.Name}}</strong>. <small>(<a href="{{user.LogoutUrl}}">logout?</a>)</small></p>
+			</div>
+		</div> <!-- navbar-inner -->
+	</div> <!-- navbar navbar-fixed-top -->
+
+	<div class="container">
+			<div ng-view></div>
+	</div>
+	
+	<!-- JQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<!-- Angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript" src="/assets/js/controllers.js"></script>
+</body>
+</html>
+

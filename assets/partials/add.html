@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="span12">
+		<h4>Add Beers (Manual)</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<br/>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<form class="form-add" action="/api/beers/add" method="post">
+			<table class="table">
+				<thead>
+					<tr>							
+						<th>Name</th>
+						<th>Brewery</th>
+						<th>Country</th>
+						<th>Style</th>
+						<th>Score</th>
+						<th>Comment</th>						
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>							
+						<td><input type="text" class="span2" name="beerName" required></td>
+						<td><input type="text" class="span2" name="beerBrewery"></td>
+						<td><input type="text" class="span2" name="beerCountry"></td>
+						<td><input type="text" class="span2" name="beerStyle"></td>
+						<td><input type="text" class="span1" name="beerScore"></td>
+						<td><input type="text" class="span1" name="beerComment"></td>
+						<td><button type="submit" class="btn">Add</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<h4>Add Beers (Search)</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<br/>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<form class="form-search">
+			<div class="input-append">
+				<input type="text" class="span2 search-query">
+				<button type="submit" class="btn">Search</button>
+			</div>
+		</form>
+	</div>
+</div>

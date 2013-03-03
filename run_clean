@@ -1,0 +1,1 @@
+dev_appserver.py --use_sqlite --clear_datastore .

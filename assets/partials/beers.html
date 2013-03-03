@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="span12">
+		<h4>Beer List</h4>
+		<span ng-show="beers.length > 0">{{beers.length}} beers and counting...</span>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<br/>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<div class="alert alert-info" ng-show="beers.length == 0">
+			No beers found.
+		</div>
+	
+		<table class="table table-hover table-condensed" ng-show="beers.length > 0">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th ng-repeat="(k,v) in ['Name', 'Brewery', 'Country', 'Style', 'Score']">
+						<a href="#" ng-click="setOrder(v)">{{v}}</a>
+					</th>
+					<th>Comment</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="beer in beers | orderBy:orderPredicate:isReversed">
+				<tr id="taskSortable" ng-class="{success: task.complete}">							
+					<td>{{$index+1}}</td>
+					<td>{{beer.Name}}</td>
+					<td>{{beer.Brewery}}</td>
+					<td>{{beer.Country}}</td>
+					<td>{{beer.Style}}</td>
+					<td>{{beer.Score}}</td>
+					<td>{{beer.Comment}}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+<!--
+<div class="row">
+	<div class="span12">
+		Beers: <br/>
+		{{beers}}		
+	</div>
+</div>
+-->
